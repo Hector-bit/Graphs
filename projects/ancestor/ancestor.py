@@ -1,3 +1,4 @@
 
 def earliest_ancestor(ancestors, starting_node):
-    pass
+    print(ancestors, 'ancestor')
+    print(starting_node, 'starting')

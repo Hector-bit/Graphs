@@ -24,7 +24,7 @@ Write a function that, given the dataset and the ID of an individual in the data
 ```
 Example input
   6
-
+Note to self: what are lines 28 - 37 suppose to be? paths towards 6?
   1 3
   2 3
   3 6
