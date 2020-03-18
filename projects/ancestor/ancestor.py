@@ -21,4 +21,9 @@ def earliest_ancestor(ancestors, starting_node, valid_ancestor=None):
             # if i[1] == starting_node:
             #     return i[0]
     print(valid_ancestor, 'ANCESTORS')
-    
+    lowest_numeric = 100
+    for j in valid_ancestor:
+        if j < lowest_numeric:
+            lowest_numeric = j
+    print(lowest_numeric, 'lowest')
+    return lowest_numeric
