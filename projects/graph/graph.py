@@ -6,8 +6,27 @@ from util import Stack, Queue  # These may come in handy
 class Graph:
 
     """Represent a graph as a dictionary of vertices mapping labels to edges."""
-    def __init__(self):
-        self.vertices = {}
+    def __init__(self)        q = Queue()
+        q.enqueue([starting_vertex])
+        visited = set()
+        # print(destination_vertex, 'TARGET')
+        #if the queue has a node then...
+        while q.size() > 0:
+            path = q.dequeue()
+            last = path[-1]
+            print(last, 'THIS IS LAST')
+            # Check if it's been visited
+            # If it hasn't been visited...
+            if last not in visited:
+                # Mark it as visited
+                visited.add(last)
+                if last == destination_vertex:
+                    # copy = path.copy()
+                    return path
+                for n in self.get_neighbors(last):
+                    path_copy = path.copy()
+                    path_copy.append(n)
+                    q.enqueue(path_copy)
 
     def add_vertex(self, vertex_id):
         """
