@@ -11,13 +11,14 @@ def earliest_ancestor(ancestors, starting_node, valid_ancestor=None):
     for i in ancestors:
         print('pair', i)
         #if starting node is in any of the tuples first index then...
-        if starting_node == i[1]: 
+        if starting_node != i[0] and starting_node == i[1]: 
             # recurse on the second number
             earliest_ancestor(ancestors, i[0], valid_ancestor)
             print(f'starting node {starting_node} is in this pair {i}, second number in tuple: {i[1]}')
-        else:
+        elif starting_node == i[0] and starting_node != i[1]:
             print('This is a valid ancestor: ', i[0])
             valid_ancestor.add(i[0])
             # if i[1] == starting_node:
             #     return i[0]
     print(valid_ancestor, 'ANCESTORS')
+    
