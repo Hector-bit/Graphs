@@ -48,12 +48,22 @@ class SocialGraph:
         # !!!! IMPLEMENT ME
 
         # Add users
-        print('range', random.randrange(1))
         for i in range(num_users):
             self.add_user(random_names[random.randrange(len(random_names))])
 
         # Create friendships
+        possible_friendships = []
         for userID in self.users:
+            print(userID, self.last_id, 'ASDFLKJAWOI')
+            for friendID in range(userID, self.last_id):
+                possible_friendships.append((userID, friendID))
+        #shuffle the possible friendships
+        random.shuffle(possible_friendships)
+
+        #pick the top n of possible friendships to be created
+        for i in range(num_users*avg_friendships//2):
+            (friend, other_friend) = possible_friendships[i]
+            self.add_friendship(friend, other_friend)
 
 
     def get_all_social_paths(self, user_id):
