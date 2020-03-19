@@ -48,6 +48,7 @@ class Graph:
         Print each vertex in breadth-first order
         beginning from starting_vertex.
         """
+        somethingList = []
         #create a queue
         q = Queue()
         #enqueue the starting vertex
@@ -62,11 +63,12 @@ class Graph:
             # If it hasn't been visited...
             if v not in visited:
                 # Mark it as visited
-                print(v)
+                somethingList.append(v)
                 visited.add(v)
                 # Enqueue
                 for neighbor in self.get_neighbors(v):
                     q.enqueue(neighbor)
+        return somethingList
 
 
     def dft(self, starting_vertex):
