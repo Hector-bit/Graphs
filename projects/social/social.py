@@ -1,3 +1,5 @@
+import random 
+
 class User:
     def __init__(self, name):
         self.name = name
@@ -38,6 +40,7 @@ class SocialGraph:
 
         The number of users must be greater than the average number of friendships.
         """
+        random_names = ["Aaberg","Aalst","Aara","Aaren","Aarika","Aaron","Aaronson","Ab","Aba","Abad","Abagael","Abagail","Abana","Abate","Abba","Abbate","Abbe","Abbey","Abbi","Abbie","Abbot","Abbotsen","Abbotson","Abbotsun","Abbott","Abbottson","Abby","Abbye","Abdel","Abdella","Abdu","Abdul","Abdulla","Abe","Abebi","Abel","Abelard","Abell","Abercromby","Abernathy","Abernon","Abert","Abeu","Abey","Abie","Abigael","Abigail","Abigale"]
         # Reset graph
         self.last_id = 0
         self.users = {}
@@ -45,8 +48,13 @@ class SocialGraph:
         # !!!! IMPLEMENT ME
 
         # Add users
+        print('range', random.randrange(1))
+        for i in range(num_users):
+            self.add_user(random_names[random.randrange(len(random_names))])
 
         # Create friendships
+        for userID in self.users:
+
 
     def get_all_social_paths(self, user_id):
         """
